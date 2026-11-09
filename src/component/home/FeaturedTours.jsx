@@ -1,41 +1,9 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Star, Flame, ArrowUpRight, ShieldCheck, HeartHandshake, Compass } from 'lucide-react';
+import { FEATURED_TOURS } from '../../data/tours-data';
+import { Link } from 'react-router';
 
-const FEATURED_TOURS = [
-    {
-        id: 1,
-        title: 'Swiss Alps Glacier & Panorama Trail',
-        location: 'Zermatt, Switzerland',
-        duration: '7 Days',
-        price: 1299,
-        rating: 4.96,
-        reviews: 210,
-        tag: 'Trending',
-        image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80',
-    },
-    {
-        id: 2,
-        title: 'Santorini Sunset & Blue Dome Odyssey',
-        location: 'Oia, Greece',
-        duration: '5 Days',
-        price: 940,
-        rating: 4.89,
-        reviews: 145,
-        tag: 'Popular',
-        image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80',
-    },
-    {
-        id: 3,
-        title: 'Kyoto Bamboo Forest & Historic Temples',
-        location: 'Kyoto, Japan',
-        duration: '6 Days',
-        price: 1150,
-        rating: 4.94,
-        reviews: 320,
-        tag: 'Top Rated',
-        image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
-    },
-];
+
 
 const HIGHLIGHTS = [
     {
@@ -146,10 +114,12 @@ export default function FeaturedTours() {
                                         <span className="text-2xl font-black text-gray-900">${tour.price}</span>
                                     </div>
 
-                                    <button className="flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition duration-200">
-                                        <span>Details</span>
-                                        <ArrowUpRight className="w-4 h-4" />
-                                    </button>
+                                    <Link to={`/tours/${tour.id}`}>
+                                        <button className="flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition duration-200">
+                                            <span>Details</span>
+                                            <ArrowUpRight className="w-4 h-4" />
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

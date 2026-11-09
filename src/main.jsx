@@ -8,6 +8,7 @@ import PublicLayout from './layout/PublicLayout.jsx'
 import About from './pages/About.jsx'
 import Explore from './pages/Explore.jsx'
 import Login from './pages/Login.jsx';
+import TourDetails from './pages/TourDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
+      },
+      {
+        path: "/tours/:xyz",
+        element: <TourDetails />
       }
     ]
   },
